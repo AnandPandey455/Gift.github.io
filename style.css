@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sofia&display=swap');
+
+/*@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+*/
+
+body {
+  background-image: url("https://img.hotimg.com/Rosebackgr.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  margin-top: 35px;
+}
+
+.container {
+   font-family: "Sofia",cursive;
+   font-size: 200px;
+   height: 800px;
+	 display: flex;
+	 flex-direction: column;
+	 align-items: center;
+	 justify-content: center;;
+}
+.container h{
+  background-color: rgba(255, 255, 255, 0);
+  padding: 20px;
+  filter: blur(5px);
+  font-family: "Playfair Display", serif;
+  font-style: normal;
+  font-size: 200px;
+  color: white;
+  text-align: center;
+}
+
+/*adding a hover effect in images______________*/
+.scrapbook img {
+    transition: transform .5s ease ; /* Add a transition effect */
+}
+
+.scrapbook img:hover {
+    transform: scale(2);/* Change the scale of the image on hover */
+}
+/* hover effect ended________/////////////_____*/
+
+.scrapbook {
+  font-family: "Sofia", cursive;
+  line-height: 1.6;
+  margin: 0 auto;
+  padding: 15px;
+  column-count: 2;
+  column-gap: 22px;
+  max-width: 1200px;
+}
+
+.scrapbook h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  font-family: "Permanent Marker", cursive;
+  padding: 10px 20px;
+  background-color: #ffeecc;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  transform: rotate(-5deg);
+}
+
+.scrapbook p {
+  position: relative;
+  padding: 10px;
+  background-color: #ffeecc;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transform: rotate(2deg);
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  /*transition: transform 0.9s ease-in-out, background-color 0.3s ease-in-out;
+  max-width: 70% !important;*/
+}
+
+.random {
+  transform: rotate(calc(-2deg + 4deg * var(--rotation))) !important;
+  background-color: var(--bgcolor) !important;
+  font-family: var(--font) !important;
+  font-size: var(--fontsize) !important;
+  white-space: pre-wrap !important;
+}
+
+.polaroid {
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transform: rotate(var(--rotation, -4deg));
+  margin-bottom: 220px;
+}
+
+.polaroid img {
+  display: block;
+  min-width: 100%;
+  object-fit: cover;
+  height: 345px;
+  overflow: hidden;
+}
+
+.polaroid::before,
+.polaroid::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 20px;
+  background-color: #ccc;
+  transform: rotate(45deg);
+}
+
+.polaroid::before {
+  left: -3px;
+  top: -10px;
+}
+
+.polaroid::after {
+  right: -30px;
+  top: -10px;
+}
+
+.polaroid figcaption {
+  font-family: "Permanent Marker", cursive;
+  font-size: 18px;
+  margin-top: 10px;
+  color: #333;
+}
+
+.polaroid-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  max-width: 100%;
+  /* Ensure the group does not exceed the width of the parent */
+}
+
+.polaroid-group .polaroid {
+  width: 100%;
+  /* Adjust the width as needed */
+  transform: rotate(-2deg);
+  /* Add a slight rotation for a more random appearance */
+}
+
+.polaroid-group .polaroid + .polaroid {
+  transform: rotate(2deg);
+  /* Opposite rotation for variety */
+  margin-top: 110px;
+  /* Add negative margin to create overlap */
+}
+
+.footer p{
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  color: #b48df8;
+  font-size: 12px;
+  text-align: right;
+  font-family: monospace;
+}
+
+.footer a {
+  color: blue;
+  text-decoration: none;
+}
