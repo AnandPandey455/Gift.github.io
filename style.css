@@ -1,172 +1,112 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sofia&display=swap');
-
-/*@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
-*/
-
 body {
-  background-image: url("https://img.hotimg.com/Rosebackgr.jpeg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin: 0;
-  padding: 0;
-  justify-content: center;
-  align-items: center;
-  margin-top: 35px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
-.container {
-   font-family: "Sofia",cursive;
-   font-size: 200px;
-   height: 800px;
-	 display: flex;
-	 flex-direction: column;
-	 align-items: center;
-	 justify-content: center;;
+.message h{
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color: red;
 }
-.container h{
-  background-color: rgba(255, 255, 255, 0);
+p1 {
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: red;
+}
+.message {
+  background-color: #f7f7f7;
   padding: 20px;
-  filter: blur(5px);
-  font-family: "Playfair Display", serif;
-  font-style: normal;
-  font-size: 200px;
-  color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 50px rgba(255, 0, 0, 0.5);
+  margin-bottom: 20px;
   text-align: center;
 }
 
-/*adding a hover effect in images______________*/
-.scrapbook img {
-    transition: transform .5s ease ; /* Add a transition effect */
+.face {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 9);
 }
 
-.scrapbook img:hover {
-    transform: scale(2);/* Change the scale of the image on hover */
-}
-/* hover effect ended________/////////////_____*/
-
-.scrapbook {
-  font-family: "Sofia", cursive;
-  line-height: 1.6;
-  margin: 0 auto;
-  padding: 15px;
-  column-count: 2;
-  column-gap: 22px;
-  max-width: 1200px;
+.eye {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #333;
 }
 
-.scrapbook h1 {
-  font-size: 28px;
-  margin-bottom: 10px;
-  font-family: "Permanent Marker", cursive;
-  padding: 10px 20px;
-  background-color: #ffeecc;
-  border-radius: 5px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-  display: inline-block;
-  transform: rotate(-5deg);
+.left-eye {
+    left: 40px;
 }
 
-.scrapbook p {
-  position: relative;
-  padding: 10px;
-  background-color: #ffeecc;
-  border-radius: 5px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  transform: rotate(2deg);
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  /*transition: transform 0.9s ease-in-out, background-color 0.3s ease-in-out;
-  max-width: 70% !important;*/
+.right-eye {
+    right: 40px;
 }
 
-.random {
-  transform: rotate(calc(-2deg + 4deg * var(--rotation))) !important;
-  background-color: var(--bgcolor) !important;
-  font-family: var(--font) !important;
-  font-size: var(--fontsize) !important;
-  white-space: pre-wrap !important;
+.pupil {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 20px;
+    border-radius: 0%;
+    background-color: #fff;
 }
 
-.polaroid {
-  position: relative;
-  display: inline-block;
-  padding: 10px;
-  background-color: #fff;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  transform: rotate(var(--rotation, -4deg));
-  margin-bottom: 220px;
+.mouth {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(100%);
+    width: 70px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #333;
 }
 
-.polaroid img {
-  display: block;
-  min-width: 100%;
-  object-fit: cover;
-  height: 345px;
-  overflow: hidden;
+.sad-eye {
+    animation: sad-eye 2s infinite;
 }
 
-.polaroid::before,
-.polaroid::after {
-  content: "";
-  position: absolute;
-  width: 10px;
-  height: 20px;
-  background-color: #ccc;
-  transform: rotate(45deg);
+.sad-mouth {
+    animation: sad-mouth 2s infinite;
 }
 
-.polaroid::before {
-  left: -3px;
-  top: -10px;
+@keyframes sad-eye {
+    0% {
+        transform: translateY(-50%) scale(1);
+    }
+    50% {
+        transform: translateY(10%) scaleY(0.5);
+    }
+    100% {
+        transform: translateY(-50%) scale(1);
+    }
 }
 
-.polaroid::after {
-  right: -30px;
-  top: -10px;
-}
-
-.polaroid figcaption {
-  font-family: "Permanent Marker", cursive;
-  font-size: 18px;
-  margin-top: 10px;
-  color: #333;
-}
-
-.polaroid-group {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  max-width: 100%;
-  /* Ensure the group does not exceed the width of the parent */
-}
-
-.polaroid-group .polaroid {
-  width: 100%;
-  /* Adjust the width as needed */
-  transform: rotate(-2deg);
-  /* Add a slight rotation for a more random appearance */
-}
-
-.polaroid-group .polaroid + .polaroid {
-  transform: rotate(2deg);
-  /* Opposite rotation for variety */
-  margin-top: 110px;
-  /* Add negative margin to create overlap */
-}
-
-.footer p{
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  color: #b48df8;
-  font-size: 12px;
-  text-align: right;
-  font-family: monospace;
-}
-
-.footer a {
-  color: blue;
-  text-decoration: none;
-}
+@keyframes sad-mouth {
+    0% {
+        transform: translateX(-50%) scaleY(1);
+    }
+    50% {
+        transform: translateX(2%) scaleY(0.4) scaleX(0.7);
+    }
+    100% {
+        transform: translateX(-50%) scaleY(1);
+    }
+	}
