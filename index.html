@@ -1,0 +1,139 @@
+<!--by Anand Pandey-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>check</title>
+  <link rel="icon" href="https://img.hotimg.com/HD-wallpaper-rose-drop-drops-flower-love-red-red-rose-water-drop.jpeg">
+  <style>
+    /* Style the container */
+    .download-button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    /* Style the button */
+    .download-button {
+      background-color: #000000;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      border-radius: 5px;
+    }
+
+    /* Style the button text */
+    .button-text {
+      color: #0000ff;
+    }
+
+    /* Style the wave container */
+    .wave-container {
+      position: absolute;
+      top: 6px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    /* Style the wave */
+    .wave {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #6d2bbc;
+      transform: translateY(-50%);
+      animation: wave 2s infinite;
+    }
+
+    /* Animate the wave */
+    @keyframes wave {
+      0% {
+        transform: translateY(-50%) scaleX(0);
+      }
+      100% {
+        transform: translateY(-50%) scaleX(1);
+      }
+    }
+
+    /* Style the percentage text */
+    .percentage {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      color: #ffffff;
+    }
+
+    /* Style the completed text */
+    .completed {
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <!-- Create a container for the button -->
+  <div class="download-button-container">
+    <!-- Create the download button -->
+    <button class="download-button">
+      <span class="button-text">Download</span>
+      <div class="wave-container">
+        <div class="wave"></div>
+      </div>
+      <span class="percentage"></span>
+    </button>
+  </div>
+
+  <script>
+    alert("Secured by Microsoft Github");
+    // Get the button element
+    const button = document.querySelector('.download-button');
+
+    // Get the button text element
+    const buttonText = document.querySelector('.button-text');
+
+    // Get the wave element
+    const wave = document.querySelector('.wave');
+
+    // Get the percentage element
+    const percentage = document.querySelector('.percentage');
+
+    // Add an event listener to the button
+    button.addEventListener('click', () => {
+      // Animate the button on click
+      button.classList.add('animate');
+
+      // Animate the wave
+      wave.style.transform = 'translateY(-50%) scaleX(1)';
+
+      // Animate the percentage
+      let count = 0;
+      const interval = setInterval(() => {
+        count++;
+        percentage.textContent = `${count}%`;
+        if (count === 100) {
+          clearInterval(interval);
+          buttonText.textContent = 'Completed';
+          buttonText.classList.add('completed');
+          percentage.style.opacity=0;
+          // Redirect to another page after 2 seconds
+          setTimeout(() => {
+            window.location.href = 'https://www.google.com';
+          }, 2000);
+        }
+      }, 20);
+    });
+  </script>
+</body>
+</html>
