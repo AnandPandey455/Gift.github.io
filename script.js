@@ -1,3 +1,7 @@
+
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+
 document.addEventListener("DOMContentLoaded", function() {
     const leftEye = document.querySelector(".left-eye");
     const rightEye = document.querySelector(".right-eye");
